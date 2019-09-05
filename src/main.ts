@@ -1,10 +1,11 @@
-import {Aurelia} from 'aurelia-framework'
+import { Aurelia } from 'aurelia-framework';
 import environment from './environment';
-import {PLATFORM} from 'aurelia-pal';
+import { PLATFORM } from 'aurelia-pal';
 
 export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
+    .globalResources(['bootstrap/dist/css/bootstrap.css'])
     .feature(PLATFORM.moduleName('resources/index'));
 
   aurelia.use.developmentLogging(environment.debug ? 'debug' : 'warn');
